@@ -3,12 +3,14 @@ package program.model;
 import program.model.animals.PackAnimals;
 import program.model.animals.Pets;
 import program.model.animals.mainClass.AnimalClass;
+import java.util.ArrayList;
 
 public class AnimalFactory {
     private static int counterId = 1;
 
     public static AnimalClass createAnimal(
-            AnimalCounter counter, String typeAnimal, String animalBreed, String name, int age
+            AnimalCounter counter, String typeAnimal, String animalBreed,
+            String name, int age, ArrayList<String> commands
     ){
         if (typeAnimal == null || typeAnimal.isEmpty()){
             throw new IllegalArgumentException("Тип животного не может быть пустым.");
@@ -23,9 +25,9 @@ public class AnimalFactory {
         }
 
         if ("Pets".equals(typeAnimal)){
-            return new Pets(id, typeAnimal, animalBreed, name, age);
+            return new Pets(id, typeAnimal, animalBreed, name, age, commands);
         } else if ("PackAnimals".equals(typeAnimal)){
-            return new PackAnimals(id, typeAnimal, animalBreed, name, age);
+            return new PackAnimals(id, typeAnimal, animalBreed, name, age, commands);
         }
 
         return null;
