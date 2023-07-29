@@ -1,7 +1,16 @@
 package program;
 
+import program.view.ConsoleUi;
+
 public class Program {
     public static void main(String[] args) {
-        System.out.println("Hello world");
+        ConsoleUi console = new ConsoleUi();
+        try {
+            console.addNewAnimal();
+            console.print();
+        } finally {
+            console.closeCounter();
+        }
+
     }
 }
