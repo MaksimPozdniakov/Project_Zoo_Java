@@ -3,15 +3,36 @@ package program.view;
 import program.model.AnimalCounter;
 import program.model.AnimalFactory;
 import program.presenter.Presenter;
-
+import program.presenter.commands.MainMenu;
 import java.util.Scanner;
 
 public class ConsoleUi {
 
-    Presenter presenter = new Presenter();
-    Scanner sc = new Scanner(System.in);
+    protected Presenter presenter = new Presenter();
+    protected Scanner sc = new Scanner(System.in);
+    protected AnimalCounter counter = new AnimalCounter();
+    protected MainMenu menu;
+    private boolean workBase = true;
 
-    AnimalCounter counter = new AnimalCounter();
+
+
+    public void start(){
+        menu = new MainMenu(this);
+        do{
+            printMenu();
+            System.out.print("Выберите пункт меню: ");
+            int choice = sc.nextInt();
+            if (choice != 1) {
+                menu.execute(choice - 1);
+            } else {
+                System.out.printf("Введите число от 1 до %d", menu.getSize());
+            }
+        } while (workBase);
+    }
+
+    public void printMenu(){
+        System.out.println(menu.printMenu());
+    }
 
     public void addNewAnimal(){
         System.out.print("Введите тип животного: ");

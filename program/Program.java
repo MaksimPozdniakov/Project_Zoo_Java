@@ -6,8 +6,7 @@ public class Program {
     public static void main(String[] args) {
         ConsoleUi console = new ConsoleUi();
         try {
-            console.addNewAnimal();
-            console.print();
+            console.start();
         } finally {
             console.closeCounter();
         }
