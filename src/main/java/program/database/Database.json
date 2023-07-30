@@ -1,0 +1,27 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "typeAnimal": "Pets",
+      "animalBreed": "Dog",
+      "name": "Buddy",
+      "commands": [
+        "Лает",
+        "Сидит"
+      ],
+      "age": 5
+    },
+    {
+      "id": 2,
+      "typeAnimal": "PackAnimals",
+      "animalBreed": "Dog",
+      "name": "Grey",
+      "commands": [
+        "Прыгает",
+        "лежит",
+        "Лает"
+      ],
+      "age": 3
+    }
+  ]
+}

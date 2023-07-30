@@ -37,6 +37,16 @@ public class ConsoleUi {
         System.out.println(menu.printMenu());
     }
 
+    public void readDatabase(){
+        presenter.readDatabase();
+        start();
+    }
+
+    public void writeDatabase(){
+        presenter.writeDatabase();
+        start();
+    }
+
     public void addNewAnimal(){
         System.out.print("Введите тип животного: ");
         String typeAnimal = sc.next();
@@ -70,6 +80,7 @@ public class ConsoleUi {
 
     public void print(){
         presenter.print();
+        start();
     }
 
     public void end(){

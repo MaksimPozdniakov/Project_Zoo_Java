@@ -1,8 +1,6 @@
 package program.presenter.commands;
 
-import program.presenter.commands.allCommands.Add;
-import program.presenter.commands.allCommands.End;
-import program.presenter.commands.allCommands.Print;
+import program.presenter.commands.allCommands.*;
 import program.view.ConsoleUi;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +11,11 @@ public class MainMenu {
 
     public MainMenu(ConsoleUi console){
         commandList = new ArrayList<>();
+        commandList.add(new Read(console));
         commandList.add(new Add(console));
         commandList.add(new Print(console));
         commandList.add(new End(console));
+        commandList.add(new Write(console));
     }
 
     public String printMenu(){
