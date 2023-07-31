@@ -9,10 +9,16 @@ public class AnimalCounter implements AutoCloseable{
         if (resourceClosed) {
             throw new IllegalStateException("Ошибка: Работа с объектом типа AnimalCounter была не в ресурсном try.");
         }
-
         count++;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     @Override
     public void close(){

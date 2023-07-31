@@ -3,12 +3,14 @@ package program.presenter;
 import program.model.Model;
 import program.model.animals.mainClass.AnimalClass;
 
+import java.util.ArrayList;
+
 public class Presenter {
 
     Model model = new Model();
 
-    public void readDatabase(){
-        model.readDatabase();
+    public ArrayList<AnimalClass> readDatabase(){
+        return model.readDatabase();
     }
 
     public void writeDatabase(){
@@ -17,6 +19,10 @@ public class Presenter {
 
     public void addNewAnimal(AnimalClass animal){
         model.addNewAnimal(animal);
+    }
+
+    public void addNewCommand(int num, ArrayList<String> listCommand){
+        model.addNewCommand(num,listCommand);
     }
 
     public void print(){

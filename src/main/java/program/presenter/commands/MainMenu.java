@@ -14,8 +14,9 @@ public class MainMenu {
         commandList.add(new Read(console));
         commandList.add(new Add(console));
         commandList.add(new Print(console));
-        commandList.add(new End(console));
+        commandList.add(new NewCommand(console));
         commandList.add(new Write(console));
+        commandList.add(new End(console));
     }
 
     public String printMenu(){
