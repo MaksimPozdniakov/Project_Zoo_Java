@@ -6,22 +6,43 @@
       "animalBreed": "Dog",
       "name": "Buddy",
       "commands": [
-        "Лает",
-        "Сидит"
+        "Сидеть, Голос, Лежать",
+        "Стоять",
+        "Рядом"
       ],
       "age": 5
     },
     {
       "id": 2,
       "typeAnimal": "PackAnimals",
-      "animalBreed": "Dog",
+      "animalBreed": "Wolf",
       "name": "Grey",
       "commands": [
-        "Прыгает",
-        "лежит",
-        "Лает"
+        "Нельзя"
       ],
       "age": 3
+    },
+    {
+      "id": 3,
+      "typeAnimal": "Pets",
+      "animalBreed": "Cat",
+      "name": "Betty",
+      "commands": [
+        "Сидеть, Лежать",
+        "Нельзя",
+        "Бежать"
+      ],
+      "age": 4
+    },
+    {
+      "id": 4,
+      "typeAnimal": "PackAnimals",
+      "animalBreed": "Tiger",
+      "name": "Balu",
+      "commands": [
+        "Нельзя"
+      ],
+      "age": 5
     }
   ]
 }

@@ -20,8 +20,13 @@ public class AnimalClass {
         this.commands = commands;
     }
 
+    // Метод для замены команд животного на новый список команд
+    public void setCommands(ArrayList<String> commands) {
+        this.commands = commands;
+    }
+
     public String toString() {
-        return id + " " + typeAnimal + " " + animalBreed + " " + name + " " + age + " " + commands;
+        return id + "; " + typeAnimal + "; " + animalBreed + "; " + name + "; " + age + ";" + commands;
     }
 
 }

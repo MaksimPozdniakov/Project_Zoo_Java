@@ -2,6 +2,7 @@ package program.view;
 
 import program.model.AnimalCounter;
 import program.model.AnimalFactory;
+import program.model.animals.mainClass.AnimalClass;
 import program.presenter.Presenter;
 import program.presenter.commands.MainMenu;
 
@@ -38,7 +39,10 @@ public class ConsoleUi {
     }
 
     public void readDatabase(){
-        presenter.readDatabase();
+        ArrayList<AnimalClass> animals = presenter.readDatabase();
+        if (animals.isEmpty()){
+            System.out.println("\tЖурнал пуст");
+        }
         start();
     }
 
@@ -60,17 +64,38 @@ public class ConsoleUi {
         System.out.print("Введите возраст животного: ");
         int age = sc.nextInt();
 
-        System.out.print("Каким командам обучен?");
+        System.out.println("Каким командам обучен?");
+        System.out.println("После внесения всех комманд напишите 'end' или 'все' и нажмите 'Enter'");
         ArrayList<String> commands = new ArrayList<>();
         while (true){
             String command = sc.next();
-            if (command.equals("end")){
+            if (command.equals("end") || command.equals("все")){
                 break;
             }
             commands.add(command);
         }
 
         presenter.addNewAnimal(AnimalFactory.createAnimal(counter,typeAnimal,animalBreed,name,age,commands));
+        start();
+    }
+
+    public void addNewCommand(){
+        presenter.print();
+        System.out.print("Какое животное прошло дресировку? ");
+        int num = sc.nextInt();
+
+        System.out.println("Какими командами был обучен?");
+        System.out.println("После внесения всех изменений напишите 'end' или 'все' и нажмите 'Enter'");
+        ArrayList<String> listCommand = new ArrayList<>();
+        while (true){
+            String newCommand = sc.next();
+            if (newCommand.equals("end") || newCommand.equals("все")){
+                break;
+            }
+            listCommand.add(newCommand);
+        }
+
+        presenter.addNewCommand(num,listCommand);
         start();
     }
 

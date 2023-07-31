@@ -6,7 +6,9 @@ import program.model.animals.mainClass.AnimalClass;
 import java.util.ArrayList;
 
 public class AnimalFactory {
+
     private static int counterId = 1;
+    private static int lastLoadedId = 0;
 
     public static AnimalClass createAnimal(
             AnimalCounter counter, String typeAnimal, String animalBreed,
@@ -17,8 +19,8 @@ public class AnimalFactory {
         }
 
         int id;
-        if ("Pets".equals(typeAnimal) || "PackAnimal".equals(typeAnimal)){
-            id = counterId++;
+        if ("Pets".equals(typeAnimal) || "PackAnimals".equals(typeAnimal)){
+            id = lastLoadedId + counterId++;
             counter.add();
         } else {
             id = -1;
@@ -31,6 +33,10 @@ public class AnimalFactory {
         }
 
         return null;
+    }
+
+    public static void setLastLoadedId(int id) {
+        lastLoadedId = id;
     }
 
 }
